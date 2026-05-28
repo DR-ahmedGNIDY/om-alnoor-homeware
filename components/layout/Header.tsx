@@ -93,7 +93,7 @@ export function Header() {
 
         {/* Main Header */}
         <div className="container-luxury py-4 lg:py-2">
-          <div className="flex flex-row-reverse lg:flex-row items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
+          <div className="flex flex-row-reverse lg:grid lg:grid-cols-3 items-center gap-2 md:gap-8 w-full overflow-hidden">
            {/* Logo Center */}
 {/* Logo Center */}
 {/* ================= MOBILE LOGO ================= */}
@@ -116,7 +116,7 @@ export function Header() {
 {/* ================= DESKTOP LOGO ================= */}
 <Link
   href="/"
-  className="hidden lg:flex items-center justify-center"
+  className="hidden lg:flex items-center justify-center mx-auto"
 >
   <div className="relative w-[340px] h-[70px] overflow-visible flex items-center justify-center">
     <Image
@@ -136,7 +136,7 @@ export function Header() {
               
 
             {/* Search Bar - Desktop */}
-<div className="hidden lg:flex w-[420px] order-1">
+<div className="hidden lg:flex w-[420px] justify-self-start">
               <div className="relative w-full">
                 <input
                   type="text"
@@ -206,7 +206,7 @@ export function Header() {
   </div>
 
   {/* ================= DESKTOP ACTIONS ================= */}
-  <div className="hidden lg:flex items-center gap-4">
+  <div className="hidden lg:flex items-center gap-4 justify-self-end">
 
     {/* WhatsApp Desktop */}
     <a
