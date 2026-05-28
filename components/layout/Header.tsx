@@ -93,7 +93,7 @@ export function Header() {
 
         {/* Main Header */}
         <div className="container-luxury py-2">
-          <div className="flex md:flex-row items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
+          <div className="flex flex-row-reverse md:flex-row items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
            {/* Logo Center */}
 {/* Logo Center */}
 <Link
