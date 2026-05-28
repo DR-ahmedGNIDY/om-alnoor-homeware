@@ -131,8 +131,7 @@ export function Header() {
                 />
               </div>
             </div>
-
-            ```tsx
+            
 {/* Actions */}
 <div className="flex items-center order-2 md:order-3 ml-auto md:ml-0 w-full lg:w-auto">
 
