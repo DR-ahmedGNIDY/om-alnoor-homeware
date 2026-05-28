@@ -133,10 +133,10 @@ export function Header() {
             </div>
 
 {/* Actions */}
-<div className="flex items-center order-2 md:order-3 ml-auto md:ml-0 w-full lg:w-auto">
+<div className="flex items-center justify-between w-full lg:w-auto order-2 md:order-3 ml-auto md:ml-0">
 
-  {/* Right Side */}
-  <div className="flex items-center gap-3">
+  {/* Right Side Mobile */}
+  <div className="flex items-center gap-3 lg:gap-4">
 
     {/* Mobile Menu */}
     <button
@@ -152,6 +152,7 @@ export function Header() {
       className="flex p-2 text-gold-light hover:text-gold transition-colors relative"
     >
       <ShoppingBag size={22} />
+
       {totalItems > 0 && (
         <motion.span
           initial={{ scale: 0 }}
@@ -174,19 +175,39 @@ export function Header() {
       <span>WhatsApp</span>
     </a>
 
+    {/* WhatsApp Desktop */}
+    <a
+      href={whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-gold to-gold-dark text-black px-5 py-2.5 rounded-full font-bold text-sm hover:shadow-gold transition-all duration-300 hover:scale-105"
+    >
+      <MessageCircle size={16} />
+      <span>اطلب عبر واتساب</span>
+    </a>
+
   </div>
 
-  {/* Search Left */}
+  {/* Search Mobile Left */}
   <button
     onClick={() => setIsSearchOpen(!isSearchOpen)}
-    className="lg:hidden p-2 mr-6 text-gold-light hover:text-gold transition-colors"
+    className="lg:hidden p-2 mr-5 text-gold-light hover:text-gold transition-colors"
   >
     <Search size={22} />
   </button>
 
+  {/* Account Desktop */}
+  <Link
+    href={session ? "/account" : "/login"}
+    className="hidden sm:flex p-2 text-gold-light hover:text-gold transition-colors"
+  >
+    <User size={22} />
+  </Link>
+
 </div>
 </div>
 </div>
+
 
         {/* Navigation - Desktop */}
         <nav className="hidden lg:block border-t border-gold/10 bg-black/80 backdrop-blur-md">
