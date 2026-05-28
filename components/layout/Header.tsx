@@ -99,7 +99,7 @@ export function Header() {
 {/* ================= MOBILE LOGO ================= */}
 <Link
   href="/"
-  className="flex items-center justify-start md:justify-center"
+  className="flex lg:hidden items-center justify-start"
 >
   <div className="relative w-[220px] h-[50px] overflow-visible flex items-center justify-center">
     <Image
