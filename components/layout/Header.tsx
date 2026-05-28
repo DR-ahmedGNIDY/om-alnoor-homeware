@@ -133,7 +133,7 @@ export function Header() {
             </div>
 
 {/* Actions */}
-<div className="flex items-center justify-between w-full lg:w-auto order-2 md:order-3 ml-auto md:ml-0">
+<div className="flex items-center gap-2 md:gap-4 order-2 md:order-3 ml-auto md:ml-0">
 
   {/* Right Side Mobile */}
   <div className="flex items-center gap-3 lg:gap-4">
@@ -163,7 +163,17 @@ export function Header() {
         </motion.span>
       )}
     </Link>
+{/* Wishlist */}
+<Link
+  href="/wishlist"
+  className="hidden lg:flex p-2 text-gold-light hover:text-gold transition-colors relative"
+>
+  <Heart size={22} />
 
+  <span className="absolute -top-1 -right-1 w-4 h-4 bg-gold text-black text-[10px] font-bold rounded-full flex items-center justify-center">
+    0
+  </span>
+</Link>
     {/* WhatsApp Mobile */}
     <a
       href={whatsappLink}
@@ -199,7 +209,7 @@ export function Header() {
   {/* Account Desktop */}
   <Link
     href={session ? "/account" : "/login"}
-    className="hidden sm:flex p-2 text-gold-light hover:text-gold transition-colors"
+    className="flex p-2 text-gold-light hover:text-gold transition-colors relative"
   >
     <User size={22} />
   </Link>
