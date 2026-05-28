@@ -26,7 +26,7 @@ secondary: "/brands",
 id: 2,
 title: "مكياج احترافي",
 subtitle: "HUDA BEAUTY · MAC · DIOR",
-description: "أحدث صيحات المكياج من أشهر البراندات العالمية",
+description: ".أحدث صيحات المكياج من أشهر البراندات العالمية",
 image: "/images/banners/panar2.jpg",
 cta: {
 primary: "اكتشفي المجموعة",
