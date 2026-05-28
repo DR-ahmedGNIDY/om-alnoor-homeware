@@ -93,12 +93,12 @@ export function Header() {
 
         {/* Main Header */}
         <div className="container-luxury py-2">
-          <div className="flex flex-row-reverse md:flex-row items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
+          <div className="flex md:flex-row items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
            {/* Logo Center */}
 {/* Logo Center */}
 <Link
   href="/"
-  className="flex-1 flex items-center justify-center order-2"
+  className="flex-1 flex items-center justify-center order-1 md:order-2"
 >
 
   <div className="relative w-[260px] h-[55px] md:w-[340px] md:h-[70px] overflow-visible flex items-center justify-center">
@@ -135,7 +135,7 @@ export function Header() {
             </div>
 
             {/* Actions */}
-<div className="flex items-center gap-2 md:gap-4 order-3">
+<div className="flex items-center gap-2 md:gap-4 order-2 md:order-3">
               {/* WhatsApp Button */}
               <a
                 href={whatsappLink}
