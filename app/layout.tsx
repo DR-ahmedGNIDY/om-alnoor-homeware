@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className="bg-black text-cream font-arabic min-h-screen">
+      <body className="bg-black text-cream font-arabic min-h-screen overflow-x-hidden">
         <Providers>
           <Header />
           <main>{children}</main>
