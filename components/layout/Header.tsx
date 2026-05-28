@@ -188,7 +188,15 @@ export function Header() {
               >
                 <User size={22} />
               </Link>
-
+{/* WhatsApp Mobile */}
+<a
+  href={whatsappLink}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="lg:hidden flex items-center justify-center p-2 text-gold-light hover:text-gold transition-colors"
+>
+  <Phone size={22} />
+</a>
               {/* Mobile Menu */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
