@@ -101,7 +101,7 @@ export function Header() {
   href="/"
   className="flex lg:hidden items-center justify-start"
 >
-  <div className="relative w-[280px] h-[70px] lg:w-[220px] lg:h-[50px] overflow-visible flex items-center justify-center">
+  <div className="relative w-[250px] h-[60px] lg:w-[220px] lg:h-[50px] overflow-visible flex items-center justify-center">
     <Image
       src="/images/logo1.png"
       alt="Pharma One Cosmetics"
@@ -191,7 +191,7 @@ export function Header() {
       rel="noopener noreferrer"
       className="flex items-center gap-1 text-gold-light hover:text-gold transition-colors text-sm font-medium"
     >
-      <MessageCircle size={22} />
+      <MessageCircle size={21} />
       <span>WhatsApp</span>
     </a>
 
@@ -200,7 +200,7 @@ export function Header() {
       onClick={() => setIsSearchOpen(!isSearchOpen)}
       className="p-2 mr-4 text-gold-light hover:text-gold transition-colors"
     >
-      <Search size={22} />
+      <Search size={21} />
     </button>
 
   </div>
