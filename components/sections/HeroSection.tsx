@@ -12,8 +12,7 @@ id: 1,
 title: "مجموعة العطور الفاخرة",
 subtitle: "YSL · DIOR · CHANEL",
 description: "اكتشفي أرقى العطور العالمية بأسعار حصرية",
-image:
-"https://i.ibb.co/9kP04469/file-0000000002647246a90d829a3dbd01dc.png?v=2",
+image: "/images/banners/panar1.png",
 cta: {
 primary: "تسوقي الآن",
 secondary: "اكتشفي المزيد",
@@ -28,8 +27,7 @@ id: 2,
 title: "مكياج احترافي",
 subtitle: "HUDA BEAUTY · MAC · DIOR",
 description: "أحدث صيحات المكياج من أشهر البراندات العالمية",
-image:
-"https://i.ibb.co/gZXKFYCY/file-00000000c9dc7243b38739cbf475f27f.png?v=2",
+image: "/images/banners/panar2.png",
 cta: {
 primary: "اكتشفي المجموعة",
 secondary: "العروض",
