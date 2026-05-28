@@ -98,20 +98,18 @@ export function Header() {
 {/* Logo Center */}
 <Link
   href="/"
-  className="flex-1 flex items-center justify-center order-1 md:order-2"
+  className="flex items-center justify-start md:justify-center order-1 md:order-2 ml-auto md:ml-0"
 >
-
-  <div className="relative w-[260px] h-[55px] md:w-[340px] md:h-[70px] overflow-visible flex items-center justify-center">
+  <div className="relative w-[220px] h-[50px] md:w-[340px] md:h-[70px] overflow-visible flex items-center justify-center">
     <Image
-  src="/images/logo1.png"
-  alt="Pharma One Cosmetics"
-  width={700}
-  height={220}
-  priority
-  className="object-contain w-auto h-[140px] md:h-[180px] max-w-none"
-/>
+      src="/images/logo1.png"
+      alt="Pharma One Cosmetics"
+      width={700}
+      height={220}
+      priority
+      className="object-contain w-auto h-[120px] md:h-[180px] max-w-none"
+    />
   </div>
-
 </Link>
 
   
