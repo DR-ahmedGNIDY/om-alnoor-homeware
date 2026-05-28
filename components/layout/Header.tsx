@@ -98,7 +98,7 @@ export function Header() {
 {/* Logo Center */}
 <Link
   href="/"
-  className="flex items-center justify-start md:justify-center mr-auto lg:mr-0"
+  className="flex items-center justify-start md:justify-center order-1 md:order-2 mr-auto md:mr-0"  
 >
   <div className="relative w-[220px] h-[50px] md:w-[340px] md:h-[70px] overflow-visible flex items-center justify-center">
     <Image
