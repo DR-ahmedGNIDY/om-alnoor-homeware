@@ -93,13 +93,13 @@ export function Header() {
 
         {/* Main Header */}
         <div className="container-luxury py-2">
-          <div className="flex items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
+          <div className="flex flex-row-reverse lg:flex-row items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
            {/* Logo Center */}
 {/* Logo Center */}
 {/* ================= MOBILE LOGO ================= */}
 <Link
   href="/"
-  className="flex lg:hidden items-center justify-start ml-auto"
+  className="flex items-center justify-start md:justify-center"
 >
   <div className="relative w-[220px] h-[50px] overflow-visible flex items-center justify-center">
     <Image
