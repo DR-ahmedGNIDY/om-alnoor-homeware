@@ -8,8 +8,10 @@ import { CartDrawer } from "@/components/ui/CartDrawer";
 
 export const metadata: Metadata = {
   title: "Pharma One Cosmetics - كل منتجات التجميل في مكان واحد",
-  description: "أكثر من 7000 منتج من أكثر من 100 براند عالمي. تسوق الآن أفضل منتجات التجميل والعناية بالبشرة والشعر والعطور.",
-  keywords: "تجميل, عطور, مكياج, عناية بالبشرة, عناية بالشعر, Dior, Chanel, MAC, Huda Beauty, CeraVe, The Ordinary",
+  description:
+    "أكثر من 7000 منتج من أكثر من 100 براند عالمي. تسوق الآن أفضل منتجات التجميل والعناية بالبشرة والشعر والعطور.",
+  keywords:
+    "تجميل, عطور, مكياج, عناية بالبشرة, عناية بالشعر, Dior, Chanel, MAC, Huda Beauty, CeraVe, The Ordinary",
   authors: [{ name: "Pharma One Cosmetics" }],
   openGraph: {
     title: "Pharma One Cosmetics",
@@ -17,6 +19,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ar_EG",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 0.85,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
