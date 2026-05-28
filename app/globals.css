@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0B0B0B;
+  color: #F5F5F5;
+  direction: rtl;
+  font-family: sans-serif;
+}
+
+.gold-text {
+  color: #D4AF37;
+}
+
+.text-cream {
+  color: #F5F5F5;
+}
+
+.text-gold-muted {
+  color: rgba(212, 175, 55, 0.7);
+}
+
+.bg-black-light {
+  background-color: #111111;
+}
+
+.luxury-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: 24px;
+}
