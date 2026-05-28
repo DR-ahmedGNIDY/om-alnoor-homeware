@@ -132,81 +132,62 @@ export function Header() {
               </div>
             </div>
 
-            {/* Actions */}
-<div className="flex items-center gap-2 md:gap-4 order-2 md:order-3 ml-auto md:ml-0">
-              {/* WhatsApp Button */}
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:flex items-center gap-2 bg-gradient-to-r from-gold to-gold-dark text-black px-5 py-2.5 rounded-full font-bold text-sm hover:shadow-gold transition-all duration-300 hover:scale-105"
-              >
-                <MessageCircle size={16} />
-                <span>اطلب عبر واتساب</span>
-              </a>
+            ```tsx
+{/* Actions */}
+<div className="flex items-center order-2 md:order-3 ml-auto md:ml-0 w-full lg:w-auto">
 
-              {/* Search Mobile */}
-              <button
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="lg:hidden p-2 text-gold-light hover:text-gold transition-colors"
-              >
-                <Search size={22} />
-              </button>
+  {/* Right Side */}
+  <div className="flex items-center gap-3">
 
-              {/* Wishlist */}
-              <Link
-                href="/wishlist"
-                className="hidden sm:flex p-2 text-gold-light hover:text-gold transition-colors relative"
-              >
-                <Heart size={22} />
-                <span className="absolute -top-1 -right-1 w-4 h-4 bg-gold text-black text-[10px] font-bold rounded-full flex items-center justify-center">
-                  0
-                </span>
-              </Link>
+    {/* Mobile Menu */}
+    <button
+      onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      className="lg:hidden p-2 text-gold-light hover:text-gold transition-colors"
+    >
+      {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+    </button>
 
-              {/* Cart */}
-              <Link
-                href="/cart"
-                className="flex p-2 text-gold-light hover:text-gold transition-colors relative"
-              >
-                <ShoppingBag size={22} />
-                {totalItems > 0 && (
-                  <motion.span
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-1 w-5 h-5 bg-gold text-black text-[10px] font-bold rounded-full flex items-center justify-center"
-                  >
-                    {totalItems}
-                  </motion.span>
-                )}
-              </Link>
+    {/* Cart */}
+    <Link
+      href="/cart"
+      className="flex p-2 text-gold-light hover:text-gold transition-colors relative"
+    >
+      <ShoppingBag size={22} />
+      {totalItems > 0 && (
+        <motion.span
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          className="absolute -top-1 -right-1 w-5 h-5 bg-gold text-black text-[10px] font-bold rounded-full flex items-center justify-center"
+        >
+          {totalItems}
+        </motion.span>
+      )}
+    </Link>
 
-              {/* Account */}
-              <Link
-                href={session ? "/account" : "/login"}
-                className="hidden sm:flex p-2 text-gold-light hover:text-gold transition-colors"
-              >
-                <User size={22} />
-              </Link>
-{/* WhatsApp Mobile */}
-<a
-  href={whatsappLink}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="lg:hidden flex items-center justify-center p-2 text-gold-light hover:text-gold transition-colors"
->
-  <MessageCircle size={22} />
-</a>
-              {/* Mobile Menu */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-gold-light hover:text-gold transition-colors"
-              >
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-          </div>
-        </div>
+    {/* WhatsApp Mobile */}
+    <a
+      href={whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="lg:hidden flex items-center gap-1 text-gold-light hover:text-gold transition-colors text-sm font-medium"
+    >
+      <MessageCircle size={18} />
+      <span>WhatsApp</span>
+    </a>
+
+  </div>
+
+  {/* Search Left */}
+  <button
+    onClick={() => setIsSearchOpen(!isSearchOpen)}
+    className="lg:hidden p-2 mr-auto text-gold-light hover:text-gold transition-colors"
+  >
+    <Search size={22} />
+  </button>
+
+</div>
+</div>
+</div>
 
         {/* Navigation - Desktop */}
         <nav className="hidden lg:block border-t border-gold/10 bg-black/80 backdrop-blur-md">
