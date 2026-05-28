@@ -56,7 +56,7 @@ return () => clearInterval(timer);
 }, []);
 
 return (
-  <section className="relative h-[85vh] min-h-[650px] overflow-hidden">
+  <section className="relative h-[70vh] md:h-[85vh] min-h-[550px] md:min-h-[650px] overflow-hidden">
 
 
   {/* Background */}
@@ -85,7 +85,7 @@ return (
   <div className="relative z-10 h-full">
     <div className="container mx-auto px-6 md:px-16 h-full flex items-center">
 
-      <div className="max-w-2xl">
+      <div className="max-w-full md:max-w-2xl px-4 md:px-0">
 
         <motion.div
           key={currentSlide}
@@ -101,28 +101,28 @@ return (
           </p>
 
           {/* Title */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.2] text-white mb-6">
             {slides[currentSlide].title}
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-white/80 leading-loose mb-10 max-w-xl">
+          <p className="text-sm sm:text-base md:text-xl text-white/80 leading-loose mb-8 md:mb-10 max-w-xl">
             {slides[currentSlide].description}
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
 
             <Link
               href={slides[currentSlide].link.primary}
-              className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold px-8 py-4 rounded-full hover:scale-105 transition-all duration-300"
+              className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black font-bold px-6 py-3 md:px-8 md:py-4 rounded-full hover:scale-105 transition-all duration-300 text-center"
             >
               {slides[currentSlide].cta.primary}
             </Link>
 
             <Link
               href={slides[currentSlide].link.secondary}
-              className="border border-yellow-500/40 text-white px-8 py-4 rounded-full hover:bg-yellow-500/10 transition-all duration-300"
+              className="border border-yellow-500/40 text-white px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-yellow-500/10 transition-all duration-300 text-center"
             >
               {slides[currentSlide].cta.secondary}
             </Link>
