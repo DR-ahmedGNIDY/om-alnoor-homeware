@@ -98,7 +98,7 @@ export function Header() {
 {/* Logo Center */}
 <Link
   href="/"
-  className="flex items-center justify-start md:justify-center order-1 md:order-2 ml-auto md:ml-0"
+  className="flex items-center justify-start md:justify-center order-1 md:order-2 mr-auto md:mr-0"
 >
   <div className="relative w-[220px] h-[50px] md:w-[340px] md:h-[70px] overflow-visible flex items-center justify-center">
     <Image
@@ -133,7 +133,7 @@ export function Header() {
             </div>
 
             {/* Actions */}
-<div className="flex items-center gap-2 md:gap-4 order-2 md:order-3">
+<div className="flex items-center gap-2 md:gap-4 order-2 md:order-3 ml-auto md:ml-0">
               {/* WhatsApp Button */}
               <a
                 href={whatsappLink}
