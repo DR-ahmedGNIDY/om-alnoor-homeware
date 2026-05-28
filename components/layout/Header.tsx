@@ -92,7 +92,7 @@ export function Header() {
         </div>
 
         {/* Main Header */}
-        <div className="container-luxury py-2">
+        <div className="container-luxury py-4 lg:py-2">
           <div className="flex flex-row-reverse lg:flex-row items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
            {/* Logo Center */}
 {/* Logo Center */}
@@ -101,14 +101,14 @@ export function Header() {
   href="/"
   className="flex lg:hidden items-center justify-start"
 >
-  <div className="relative w-[220px] h-[50px] overflow-visible flex items-center justify-center">
+  <div className="relative w-[280px] h-[70px] lg:w-[220px] lg:h-[50px] overflow-visible flex items-center justify-center">
     <Image
       src="/images/logo1.png"
       alt="Pharma One Cosmetics"
       width={700}
       height={220}
       priority
-      className="object-contain w-auto h-[120px] max-w-none"
+      className="object-contain w-auto h-[150px] lg:h-[120px] max-w-none"
     />
   </div>
 </Link>
@@ -156,7 +156,7 @@ export function Header() {
 <div className="order-2 md:order-3">
 
   {/* ================= MOBILE ACTIONS ================= */}
-  <div className="flex lg:hidden items-center gap-3 mr-auto">
+  <div className="flex lg:hidden items-center gap-4 mr-auto">
 
     {/* Mobile Menu */}
     <button
@@ -171,7 +171,7 @@ export function Header() {
       href="/cart"
       className="flex p-2 text-gold-light hover:text-gold transition-colors relative"
     >
-      <ShoppingBag size={22} />
+      <ShoppingBag size={26} />
 
       {totalItems > 0 && (
         <motion.span
@@ -191,7 +191,7 @@ export function Header() {
       rel="noopener noreferrer"
       className="flex items-center gap-1 text-gold-light hover:text-gold transition-colors text-sm font-medium"
     >
-      <MessageCircle size={18} />
+      <MessageCircle size={22} />
       <span>WhatsApp</span>
     </a>
 
