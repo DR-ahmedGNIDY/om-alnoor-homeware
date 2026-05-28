@@ -96,7 +96,6 @@ export function Header() {
           <div className="flex items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
            {/* Logo Center */}
 {/* Logo Center */}
-```tsx id="logoSeparate"
 {/* ================= MOBILE LOGO ================= */}
 <Link
   href="/"
