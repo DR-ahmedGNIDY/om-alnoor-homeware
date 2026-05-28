@@ -132,19 +132,38 @@ export function Header() {
               </div>
             </div>
 
+
 {/* Actions */}
-<div className="flex items-center gap-2 md:gap-4 order-2 md:order-3">
+<div className="order-2 md:order-3">
 
-  {/* Mobile Search Left */}
-  <button
-    onClick={() => setIsSearchOpen(!isSearchOpen)}
-    className="lg:hidden p-2 mr-4 text-gold-light hover:text-gold transition-colors"
-  >
-    <Search size={22} />
-  </button>
+  {/* ================= MOBILE ACTIONS ================= */}
+  <div className="flex lg:hidden items-center gap-3 mr-auto">
 
-  {/* Mobile Right Side */}
-  <div className="flex items-center gap-3 lg:hidden">
+    {/* Mobile Menu */}
+    <button
+      onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      className="p-2 text-gold-light hover:text-gold transition-colors"
+    >
+      {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+    </button>
+
+    {/* Cart Mobile */}
+    <Link
+      href="/cart"
+      className="flex p-2 text-gold-light hover:text-gold transition-colors relative"
+    >
+      <ShoppingBag size={22} />
+
+      {totalItems > 0 && (
+        <motion.span
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          className="absolute -top-1 -right-1 w-5 h-5 bg-gold text-black text-[10px] font-bold rounded-full flex items-center justify-center"
+        >
+          {totalItems}
+        </motion.span>
+      )}
+    </Link>
 
     {/* WhatsApp Mobile */}
     <a
@@ -157,25 +176,17 @@ export function Header() {
       <span>WhatsApp</span>
     </a>
 
-    {/* Cart Mobile */}
-    <Link
-      href="/cart"
-      className="flex p-2 text-gold-light hover:text-gold transition-colors relative"
-    >
-      <ShoppingBag size={22} />
-    </Link>
-
-    {/* Mobile Menu */}
+    {/* Search Mobile */}
     <button
-      onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      className="p-2 text-gold-light hover:text-gold transition-colors"
+      onClick={() => setIsSearchOpen(!isSearchOpen)}
+      className="p-2 mr-4 text-gold-light hover:text-gold transition-colors"
     >
-      {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      <Search size={22} />
     </button>
 
   </div>
 
-  {/* Desktop Actions */}
+  {/* ================= DESKTOP ACTIONS ================= */}
   <div className="hidden lg:flex items-center gap-4">
 
     {/* WhatsApp Desktop */}
@@ -195,6 +206,10 @@ export function Header() {
       className="flex p-2 text-gold-light hover:text-gold transition-colors relative"
     >
       <Heart size={22} />
+
+      <span className="absolute -top-1 -right-1 w-4 h-4 bg-gold text-black text-[10px] font-bold rounded-full flex items-center justify-center">
+        0
+      </span>
     </Link>
 
     {/* Cart */}
@@ -203,6 +218,16 @@ export function Header() {
       className="flex p-2 text-gold-light hover:text-gold transition-colors relative"
     >
       <ShoppingBag size={22} />
+
+      {totalItems > 0 && (
+        <motion.span
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          className="absolute -top-1 -right-1 w-5 h-5 bg-gold text-black text-[10px] font-bold rounded-full flex items-center justify-center"
+        >
+          {totalItems}
+        </motion.span>
+      )}
     </Link>
 
     {/* Account */}
@@ -214,6 +239,7 @@ export function Header() {
     </Link>
 
   </div>
+
 </div>
 </div>
 </div>
