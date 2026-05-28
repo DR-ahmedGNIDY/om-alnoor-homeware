@@ -131,7 +131,7 @@ export function Header() {
                 />
               </div>
             </div>
-            
+
 {/* Actions */}
 <div className="flex items-center order-2 md:order-3 ml-auto md:ml-0 w-full lg:w-auto">
 
@@ -179,7 +179,7 @@ export function Header() {
   {/* Search Left */}
   <button
     onClick={() => setIsSearchOpen(!isSearchOpen)}
-    className="lg:hidden p-2 mr-auto text-gold-light hover:text-gold transition-colors"
+    className="lg:hidden p-2 mr-6 text-gold-light hover:text-gold transition-colors"
   >
     <Search size={22} />
   </button>
