@@ -83,9 +83,9 @@ return (
 
   {/* Content */}
   <div className="relative z-10 h-full">
-    <div className="container mx-auto px-6 md:px-16 h-full flex items-center">
+    <div className="container mx-auto px-4 sm:px-6 md:px-16 h-full flex items-center justify-center md:justify-start text-center md:text-right">
 
-      <div className="max-w-full md:max-w-2xl px-4 md:px-0">
+      <div className="w-full max-w-md md:max-w-2xl px-2 md:px-0">
 
         <motion.div
           key={currentSlide}
@@ -101,17 +101,17 @@ return (
           </p>
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.2] text-white mb-6">
+          <h1 className="text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white mb-4 md:mb-6">
             {slides[currentSlide].title}
           </h1>
 
           {/* Description */}
-          <p className="text-sm sm:text-base md:text-xl text-white/80 leading-loose mb-8 md:mb-10 max-w-xl">
+          <p className="text-base md:text-xl text-white/80 leading-relaxed md:leading-loose mb-6 md:mb-10 max-w-full md:max-w-xl">
             {slides[currentSlide].description}
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 md:gap-5 w-full sm:w-auto">
 
             <Link
               href={slides[currentSlide].link.primary}
