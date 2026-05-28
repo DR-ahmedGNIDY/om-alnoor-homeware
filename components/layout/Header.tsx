@@ -96,21 +96,42 @@ export function Header() {
           <div className="flex items-center justify-between gap-2 md:gap-8 w-full overflow-hidden">
            {/* Logo Center */}
 {/* Logo Center */}
+```tsx id="logoSeparate"
+{/* ================= MOBILE LOGO ================= */}
 <Link
   href="/"
-  className="flex items-center justify-start lg:justify-center ml-auto lg:ml-0"
+  className="flex lg:hidden items-center justify-start mr-auto"
 >
-  <div className="relative w-[220px] h-[50px] md:w-[340px] md:h-[70px] overflow-visible flex items-center justify-center">
+  <div className="relative w-[220px] h-[50px] overflow-visible flex items-center justify-center">
     <Image
       src="/images/logo1.png"
       alt="Pharma One Cosmetics"
       width={700}
       height={220}
       priority
-      className="object-contain w-auto h-[120px] md:h-[180px] max-w-none"
+      className="object-contain w-auto h-[120px] max-w-none"
     />
   </div>
 </Link>
+
+{/* ================= DESKTOP LOGO ================= */}
+<Link
+  href="/"
+  className="hidden lg:flex items-center justify-center"
+>
+  <div className="relative w-[340px] h-[70px] overflow-visible flex items-center justify-center">
+    <Image
+      src="/images/logo1.png"
+      alt="Pharma One Cosmetics"
+      width={700}
+      height={220}
+      priority
+      className="object-contain w-auto h-[180px] max-w-none"
+    />
+  </div>
+</Link>
+
+
 
   
               
@@ -131,7 +152,6 @@ export function Header() {
                 />
               </div>
             </div>
-
 
 {/* Actions */}
 <div className="order-2 md:order-3">
