@@ -12,7 +12,7 @@ import {
   Menu,
   X,
   ChevronDown,
-  Phone,
+  MessageCircle,
   LogOut,
 } from "lucide-react";
 import { useSession, signOut } from "next-auth/react";
@@ -141,7 +141,7 @@ export function Header() {
                 rel="noopener noreferrer"
                 className="hidden md:flex items-center gap-2 bg-gradient-to-r from-gold to-gold-dark text-black px-5 py-2.5 rounded-full font-bold text-sm hover:shadow-gold transition-all duration-300 hover:scale-105"
               >
-                <Phone size={16} />
+                <MessageCircle size={16} />
                 <span>اطلب عبر واتساب</span>
               </a>
 
@@ -195,7 +195,7 @@ export function Header() {
   rel="noopener noreferrer"
   className="lg:hidden flex items-center justify-center p-2 text-gold-light hover:text-gold transition-colors"
 >
-  <Phone size={22} />
+  <MessageCircle size={22} />
 </a>
               {/* Mobile Menu */}
               <button
@@ -333,7 +333,7 @@ hover:shadow-[0_0_20px_rgba(212,175,55,0.08)]
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-gradient-to-r from-gold to-gold-dark text-black px-4 py-3 rounded-full font-bold text-sm mb-6"
                 >
-                  <Phone size={18} />
+                  <MessageCircle size={18} />
                   <span>اطلب عبر واتساب</span>
                 </a>
 
