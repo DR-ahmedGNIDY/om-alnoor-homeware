@@ -132,7 +132,6 @@ export function Header() {
               </div>
             </div>
 
-```tsx id="jv0o4l"
 {/* Actions */}
 <div className="flex items-center gap-2 md:gap-4 order-2 md:order-3">
 
