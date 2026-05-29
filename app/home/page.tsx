@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { BrandsSection } from "@/components/sections/BrandsSection";
 import { CategoriesSection } from "@/components/sections/CategoriesSection";
@@ -277,18 +280,31 @@ const newArrivals: Product[] = [
   },
 ];
 
+
 export default function HomePage() {
+  const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+
+  const filteredBestSellers = selectedBrand
+    ? bestSellers.filter(
+        (product) =>
+          product.brand.slug.toLowerCase() === selectedBrand.toLowerCase()
+      )
+    : bestSellers;
+
   return (
     <>
       <HeroSection />
-      <BrandsSection />
+      <BrandsSection
+  selectedBrand={selectedBrand}
+  onSelectBrand={setSelectedBrand}
+/>
       <ProductsSection
-        title="الأكثر مبيعاً"
-        subtitle="اكتشفي المنتجات الأكثر شعبية بين عملائنا"
-        products={bestSellers}
-        viewAllLink="/shop?best-sellers=true"
-        badge="BEST SELLERS"
-      />
+  title="الأكثر مبيعاً"
+  subtitle="اكتشفي المنتجات الأكثر شعبية بين عملائنا"
+  products={filteredBestSellers}
+  viewAllLink="/shop?best-sellers=true"
+  badge="BEST SELLERS"
+/>
       <CategoriesSection />
       <OffersSection />
       <ProductsSection
