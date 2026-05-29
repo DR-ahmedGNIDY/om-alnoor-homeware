@@ -285,11 +285,15 @@ export default function HomePage() {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
   const filteredBestSellers = selectedBrand
-    ? bestSellers.filter(
-        (product) =>
-          product.brand.slug.toLowerCase() === selectedBrand.toLowerCase()
-      )
-    : bestSellers;
+  ? bestSellers.filter((product) => {
+      const brandSlug =
+        typeof product.brand === "string"
+          ? product.brand
+          : product.brand?.slug;
+
+      return brandSlug?.toLowerCase() === selectedBrand.toLowerCase();
+    })
+  : bestSellers;
 
   return (
     <>
