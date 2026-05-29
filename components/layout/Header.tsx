@@ -116,7 +116,7 @@ export function Header() {
 {/* ================= DESKTOP LOGO ================= */}
 <Link
   href="/"
-  className="hidden lg:flex items-center justify-center justify-self-center"
+  className="hidden lg:flex items-center justify-center justify-self-center order-2"
 >
   <div className="relative w-[340px] h-[70px] overflow-visible flex items-center justify-center">
     <Image
@@ -136,7 +136,7 @@ export function Header() {
               
 
             {/* Search Bar - Desktop */}
-<div className="hidden lg:flex w-[420px] justify-self-start">
+<div className="hidden lg:flex w-[420px] justify-self-end order-3">
               <div className="relative w-full">
                 <input
                   type="text"
@@ -206,7 +206,7 @@ export function Header() {
   </div>
 
   {/* ================= DESKTOP ACTIONS ================= */}
-  <div className="hidden lg:flex items-center gap-4 justify-self-end">
+  <div className="hidden lg:flex items-center gap-4 justify-self-start order-1">
 
     {/* WhatsApp Desktop */}
     <a
