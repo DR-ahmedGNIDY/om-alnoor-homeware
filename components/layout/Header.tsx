@@ -116,7 +116,7 @@ export function Header() {
 {/* ================= DESKTOP LOGO ================= */}
 <Link
   href="/"
-  className="hidden lg:flex items-center justify-center mx-auto"
+  className="hidden lg:flex items-center justify-center justify-self-center"
 >
   <div className="relative w-[340px] h-[70px] overflow-visible flex items-center justify-center">
     <Image
