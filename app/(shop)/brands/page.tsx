@@ -30,22 +30,35 @@ export default function BrandsPage() {
   return (
     <div className="min-h-screen bg-black pt-32 pb-20">
       <div className="container-luxury">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <span className="text-gold text-sm font-medium tracking-wider mb-2 block">
-            BRANDS
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-cream mb-4">
-            البراندات العالمية
-          </h1>
-          <p className="text-gold-muted max-w-lg mx-auto">
-            اكتشفي أكثر من 100 براند عالمي في عالم الجمال والتجميل
-          </p>
-        </motion.div>
+        {/* Luxury Header */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  className="text-center mb-16"
+>
+  <div className="flex items-center justify-center gap-4 mb-4">
+    <div className="h-px w-20 bg-gradient-to-r from-transparent to-[#D4AF37]" />
+    <span className="text-[#D4AF37] text-2xl">♛</span>
+    <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#D4AF37]" />
+  </div>
+
+  <h1
+    className="
+      text-5xl
+      md:text-6xl
+      font-extrabold
+      text-[#D4AF37]
+      mb-4
+      drop-shadow-[0_0_20px_rgba(212,175,55,0.5)]
+    "
+  >
+    البراندات العالمية
+  </h1>
+
+  <p className="text-[#D4AF37] text-lg md:text-xl opacity-90">
+    أكثر من 100 براند عالمي أصلي
+  </p>
+</motion.div>
 
         {/* Search */}
         <div className="max-w-xl mx-auto mb-12">

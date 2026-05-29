@@ -2,9 +2,8 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronRight, ChevronLeft, ArrowLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 const brands = [
   { id: "1", name: "DIOR", slug: "dior" },
@@ -24,7 +23,8 @@ export function BrandsSection() {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const amount = 280;
+      const amount = 350;
+
       scrollRef.current.scrollBy({
         left: direction === "left" ? -amount : amount,
         behavior: "smooth",
@@ -33,51 +33,137 @@ export function BrandsSection() {
   };
 
   return (
-    <section className="py-8 bg-black border-b border-gold/8">
+    <section className="py-16 bg-black border-b border-gold/10">
       <div className="container-luxury">
-        {/* Section Header - Compact */}
-        <div className="flex items-center justify-between mb-5">
-          <div>
-            <h2 className="text-lg font-bold text-cream">البراندات العالمية</h2>
-            <p className="text-xs text-gold-muted mt-0.5">أكثر من 100 براند عالمي</p>
+
+        {/* Luxury Header */}
+        <div className="text-center mb-12">
+
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-px w-20 bg-gradient-to-r from-transparent to-[#D4AF37]" />
+            <span className="text-[#D4AF37] text-2xl">♛</span>
+            <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#D4AF37]" />
           </div>
-          <div className="flex items-center gap-1.5">
-            <button
-              onClick={() => scroll("right")}
-              className="w-7 h-7 rounded-full border border-gold/15 flex items-center justify-center text-gold/60 hover:border-gold/40 hover:text-gold transition-all"
-            >
-              <ChevronRight size={14} />
-            </button>
-            <button
-              onClick={() => scroll("left")}
-              className="w-7 h-7 rounded-full border border-gold/15 flex items-center justify-center text-gold/60 hover:border-gold/40 hover:text-gold transition-all"
-            >
-              <ChevronLeft size={14} />
-            </button>
-          </div>
+
+          <h2
+            className="
+              text-4xl
+              md:text-5xl
+              font-extrabold
+              text-[#D4AF37]
+              mb-3
+              drop-shadow-[0_0_20px_rgba(212,175,55,0.45)]
+            "
+          >
+            البراندات العالمية
+          </h2>
+
+          <p className="text-[#D4AF37]/80 text-lg">
+            أكثر من 100 براند عالمي أصلي
+          </p>
+
+        </div>
+
+        {/* Navigation */}
+        <div className="flex justify-center gap-3 mb-8">
+
+          <button
+            onClick={() => scroll("right")}
+            className="
+              w-10
+              h-10
+              rounded-full
+              border
+              border-[#D4AF37]/20
+              flex
+              items-center
+              justify-center
+              text-[#D4AF37]
+              hover:border-[#D4AF37]
+              hover:shadow-[0_0_15px_rgba(212,175,55,0.25)]
+              transition-all
+            "
+          >
+            <ChevronRight size={18} />
+          </button>
+
+          <button
+            onClick={() => scroll("left")}
+            className="
+              w-10
+              h-10
+              rounded-full
+              border
+              border-[#D4AF37]/20
+              flex
+              items-center
+              justify-center
+              text-[#D4AF37]
+              hover:border-[#D4AF37]
+              hover:shadow-[0_0_15px_rgba(212,175,55,0.25)]
+              transition-all
+            "
+          >
+            <ChevronLeft size={18} />
+          </button>
+
         </div>
 
         {/* Brands Slider */}
         <div
           ref={scrollRef}
-          className="flex gap-3 overflow-x-auto pb-2"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex gap-5 overflow-x-auto pb-4"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
         >
           {brands.map((brand, index) => (
             <motion.div
               key={brand.id}
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.03 }}
+              transition={{ delay: index * 0.04 }}
               className="shrink-0"
             >
               <Link
                 href={`/brand/${brand.slug}`}
-                className="group flex flex-col items-center"
+                className="group block"
               >
-                <div className="w-[100px] h-[100px] rounded-xl bg-gradient-to-br from-[#1a1a1a] to-[#111] border border-gold/10 flex items-center justify-center p-4 transition-all duration-500 group-hover:border-gold/35 group-hover:shadow-[0_4px_20px_rgba(201,168,76,0.1)] group-hover:-translate-y-1">
-                  <span className="text-gold/60 font-bold text-sm tracking-wider group-hover:text-gold transition-colors duration-300">
+                <div
+                  className="
+                    w-[150px]
+                    h-[150px]
+                    rounded-3xl
+                    bg-gradient-to-b
+                    from-[#181818]
+                    to-[#0B0B0B]
+                    border
+                    border-[#D4AF37]/20
+                    flex
+                    items-center
+                    justify-center
+                    p-5
+                    transition-all
+                    duration-500
+                    group-hover:border-[#D4AF37]
+                    group-hover:-translate-y-2
+                    group-hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]
+                  "
+                >
+                  <span
+                    className="
+                      text-[#D4AF37]
+                      font-bold
+                      text-lg
+                      tracking-wide
+                      text-center
+                      drop-shadow-[0_0_8px_rgba(212,175,55,0.35)]
+                      group-hover:text-[#FFD700]
+                      transition-all
+                    "
+                  >
                     {brand.name}
                   </span>
                 </div>
@@ -85,6 +171,7 @@ export function BrandsSection() {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
