@@ -15,6 +15,10 @@ body {
 
 .gold-text {
   color: #D4AF37;
+  text-shadow:
+    0 0 5px rgba(212, 175, 55, 0.4),
+    0 0 10px rgba(212, 175, 55, 0.3),
+    0 0 15px rgba(212, 175, 55, 0.2);
 }
 
 .text-cream {
