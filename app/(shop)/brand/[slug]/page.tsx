@@ -33,7 +33,7 @@ const demoProducts: Product[] = [
     slug: "dior-addict-lip-glow",
     brand: { _id: "b7", name: "DIOR", slug: "dior", logo: "", categories: [], isActive: true, order: 7 },
     category: { _id: "c1", name: "المكياج", slug: "makeup", isActive: true, order: 1 },
-    images: ["https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=400&q=80"],
+    images: ["https://unsplash.com/photos/a-table-with-a-plate-spoons-and-utensils-on-it-p2JOmn_V3YU"],
     description: "ملمع شفاه ديور أديكت",
     price: 850,
     stock: 25,
