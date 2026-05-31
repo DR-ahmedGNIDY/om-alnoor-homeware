@@ -117,7 +117,7 @@ export function Header() {
   href="/"
 className="hidden lg:flex items-center justify-center"
 >
-  <div className="relative w-[320px] h-[120px] flex items-center justify-center">
+  <div className="relative w-[220px] h-[70px] flex items-center justify-center">
     <Image
       src="/images/logo1.webp"
       alt="أم النور للأدوات المنزلية"
