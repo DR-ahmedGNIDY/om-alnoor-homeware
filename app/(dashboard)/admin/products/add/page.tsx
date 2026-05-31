@@ -45,8 +45,8 @@ interface ProductForm {
 }
 
 const brands = [
-  { id: "huda-beauty", name: "HUDA BEAUTY" },
-  { id: "the-ordinary", name: "The Ordinary" },
+  { id: "2", name: "خلاط كهربائي" },
+  { id: "3", name: "مقلاة هوائية" },
   { id: "mac", name: "MAC" },
   { id: "loreal", name: "L'Oréal" },
   { id: "dior", name: "DIOR" },
