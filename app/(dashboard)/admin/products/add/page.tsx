@@ -45,8 +45,8 @@ interface ProductForm {
 }
 
 const brands = [
-  { id: "2", name: "خلاط كهربائي" },
-  { id: "3", name: "مقلاة هوائية" },
+  { id: "huda-beauty", name: "HUDA BEAUTY" },
+  { id: "the-ordinary", name: "The Ordinary" },
   { id: "mac", name: "MAC" },
   { id: "loreal", name: "L'Oréal" },
   { id: "dior", name: "DIOR" },
@@ -172,9 +172,9 @@ export default function AddProductPage() {
 
   const handleImageUpload = () => {
     const demoImages = [
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=80",
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&q=80",
-      "https://images.unsplash.com/photo-1571875257727-256c39da42af?w=400&q=80",
+      "https://images.unsplash.com/photo-1730597363352-0a8fe6eb5d12?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1690368675879-73bf1fb404d0?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1589983006655-4ef9a756ebe3?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ];
     const randomImage = demoImages[Math.floor(Math.random() * demoImages.length)];
     setImages((prev) => [...prev, randomImage]);
