@@ -22,13 +22,12 @@ import { cn, createWhatsAppLink } from "@/lib/utils";
 
 const navLinks = [
   { name: "الرئيسية", href: "/" },
-  { name: "المكياج", href: "/shop?category=makeup" },
-  { name: "العناية بالبشرة", href: "/shop?category=skincare" },
-  { name: "العناية بالشعر", href: "/shop?category=haircare" },
-  { name: "العطور", href: "/shop?category=perfumes" },
-  { name: "العناية بالجسم", href: "/shop?category=bodycare" },
-  { name: "الأدوات والإكسسوارات", href: "/shop?category=tools" },
-  { name: "البراندات", href: "/brands" },
+  { name: "أطقم الحلل", href: "/shop?category=cookware" },
+  { name: "أدوات المطبخ", href: "/shop?category=kitchen" },
+  { name: "الأجهزة المنزلية", href: "/shop?category=appliances" },
+  { name: "أطقم السفرة", href: "/shop?category=dining" },
+  { name: "تجهيز العرائس", href: "/shop?category=brides" },
+  { name: "التخزين والتنظيم", href: "/shop?category=storage" },
   { name: "العروض", href: "/offers" },
 ];
 
@@ -42,9 +41,9 @@ export function Header() {
   const totalItems = useCartStore((state) => state.getTotalItems)();
 
   const whatsappLink = createWhatsAppLink(
-    "+201022262971",
-    "مرحبًا، أريد الاستفسار عن منتجات Pharma One Cosmetics"
-  );
+  "+201012506517",
+  "مرحبًا، أريد الاستفسار عن منتجات أم النور للأدوات المنزلية"
+);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -104,7 +103,7 @@ export function Header() {
   <div className="relative w-[280px] h-[70px] lg:w-[220px] lg:h-[50px] overflow-visible flex items-center justify-center">
     <Image
       src="/images/logo1.png"
-      alt="Pharma One Cosmetics"
+      alt="أم النور للأدوات المنزلية"
       width={700}
       height={220}
       priority
@@ -369,10 +368,10 @@ hover:shadow-[0_0_20px_rgba(212,175,55,0.08)]
                       />
                     </div>
                     <div>
-                      <h2 className="text-sm font-bold gold-text">PHARMA ONE</h2>
-                      <p className="text-[8px] text-gold-muted tracking-wider">
-                        COSMETICS
-                      </p>
+                      <h2 className="text-sm font-bold gold-text">أم النور</h2>
+                      <p className="text-[10px] text-gold-muted">
+                        للأدوات المنزلية
+                        </p>
                     </div>
                   </div>
                   <button
@@ -414,9 +413,9 @@ hover:shadow-[0_0_20px_rgba(212,175,55,0.08)]
 
                 <div className="mt-8 pt-6 border-t border-gold/10">
                   <div className="space-y-3 text-sm text-gold-muted">
-                    <p>📞 +20 102 226 2971</p>
-                    <p>📧 support@pharmaone.com</p>
-                    <p>📍 سوهاج - شارع الجمهورية</p>
+                    <p>📞 +20 101 250 6517</p>
+                    <p>📧 info@omalnoor.com</p>
+                    <p>📍 أسيوط - منفلوط</p>
                   </div>
                 </div>
               </div>
