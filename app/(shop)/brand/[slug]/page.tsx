@@ -29,7 +29,7 @@ const brandData: Record<string, { name: string; description: string; categories:
 const demoProducts: Product[] = [
   {
     _id: "1",
-    name: "Dior Addict Lip Glow",
+    name: "طقم حلل",
     slug: "dior-addict-lip-glow",
     brand: { _id: "b7", name: "DIOR", slug: "dior", logo: "", categories: [], isActive: true, order: 7 },
     category: { _id: "c1", name: "المكياج", slug: "makeup", isActive: true, order: 1 },

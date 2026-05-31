@@ -40,11 +40,11 @@ const featuredOffers = [
 const offerProducts: Product[] = [
   {
     _id: "1",
-    name: "HUDA BEAUTY The New Nude Eyeshadow Palette",
+    name: "طقم حلل",
     slug: "huda-beauty-new-nude-eyeshadow",
     brand: { _id: "b1", name: "HUDA BEAUTY", slug: "huda-beauty", logo: "", categories: [], isActive: true, order: 1 },
     category: { _id: "c1", name: "المكياج", slug: "makeup", isActive: true, order: 1 },
-    images: ["https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=80"],
+    images: ["https://media.istockphoto.com/id/2246649547/photo/set-of-disposable-tableware-and-napkins-on-wooden-table-flat-lay.jpg?s=1024x1024&w=is&k=20&c=mGkPj0agw778m_6SJ3mSEgg2SBHVzraxUExA2ObYsGs="],
     description: "باليت ظلال عيون نيود",
     price: 1850,
     discountPrice: 925,
@@ -63,11 +63,11 @@ const offerProducts: Product[] = [
   },
   {
     _id: "2",
-    name: "The Ordinary Niacinamide 10% + Zinc 1%",
+    name: "طقم مطبخ",
     slug: "the-ordinary-niacinamide",
     brand: { _id: "b2", name: "The Ordinary", slug: "the-ordinary", logo: "", categories: [], isActive: true, order: 2 },
     category: { _id: "c2", name: "العناية بالبشرة", slug: "skincare", isActive: true, order: 2 },
-    images: ["https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&q=80"],
+    images: ["https://images.unsplash.com/photo-1587411768913-623b76d243c7?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     description: "سيروم نياسيناميد",
     price: 275,
     discountPrice: 193,
