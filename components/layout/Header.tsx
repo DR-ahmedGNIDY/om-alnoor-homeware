@@ -115,16 +115,16 @@ export function Header() {
 {/* ================= DESKTOP LOGO ================= */}
 <Link
   href="/"
-  className="hidden lg:flex items-center justify-center"
+className="hidden lg:flex items-center justify-center"
 >
-  <div className="relative w-[340px] h-[70px] overflow-visible flex items-center justify-center">
+  <div className="relative w-[320px] h-[120px] flex items-center justify-center">
     <Image
       src="/images/logo1.webp"
       alt="أم النور للأدوات المنزلية"
       width={700}
       height={220}
       priority
-      className="object-contain w-auto h-[180px] max-w-none"
+      className="object-contain w-auto h-[110px]"
     />
   </div>
 </Link>
