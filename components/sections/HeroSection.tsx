@@ -54,7 +54,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-[70vh] md:h-[85vh] min-h-[550px] md:min-h-[650px] overflow-hidden">
+    <section className="relative mt-[170px] h-[70vh] md:h-[85vh] min-h-[550px] md:min-h-[650px] overflow-hidden">
       {/* Background */}
       <AnimatePresence mode="wait">
         <motion.div
