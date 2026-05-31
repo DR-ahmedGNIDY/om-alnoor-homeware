@@ -94,7 +94,7 @@ export function HeroSection() {
               </p>
 
               {/* Title */}
-              <h1 className="text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white mb-4 md:mb-6">
+              <h1 className="text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-primary mb-4 md:mb-6">
                 {slides[currentSlide].title}
               </h1>
 
