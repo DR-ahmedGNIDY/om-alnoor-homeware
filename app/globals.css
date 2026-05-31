@@ -7,78 +7,166 @@ html {
 }
 
 body {
-  background: #0B0B0B;
-  color: #F5F5F5;
+  background: #F8F6F2;
+  color: #1F2937;
   direction: rtl;
-  font-family: sans-serif;
+  font-family: 'Cairo', sans-serif;
 }
 
-/* ===== Luxury Gold ===== */
+/* ===== Brand Colors ===== */
+
+.primary-text {
+  color: #0F2D52;
+}
 
 .gold-text {
-  color: #D4AF37;
-  text-shadow:
-    0 0 4px rgba(212, 175, 55, 0.35),
-    0 0 8px rgba(212, 175, 55, 0.25);
+  color: #C9A227;
 }
 
 .gold-premium {
-  color: #D4AF37;
+  color: #C9A227;
   text-shadow:
-    0 0 5px rgba(212, 175, 55, 0.5),
-    0 0 10px rgba(212, 175, 55, 0.35),
-    0 0 18px rgba(212, 175, 55, 0.2);
+    0 0 5px rgba(201, 162, 39, 0.25),
+    0 0 10px rgba(201, 162, 39, 0.15);
 }
 
 .text-cream {
-  color: #F5F5F5;
+  color: #F8F6F2;
 }
 
-.text-gold-muted {
-  color: rgba(212, 175, 55, 0.85);
+.text-muted {
+  color: #6B7280;
 }
 
-.bg-black-light {
-  background-color: #111111;
+.bg-primary {
+  background-color: #0F2D52;
 }
+
+.bg-primary-light {
+  background-color: #1B4375;
+}
+
+.bg-cream {
+  background-color: #F8F6F2;
+}
+
+/* ===== Cards ===== */
 
 .luxury-card {
-  background: #111111;
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  background: #FFFFFF;
+  border: 1px solid rgba(201, 162, 39, 0.15);
   border-radius: 24px;
   box-shadow:
-    0 0 20px rgba(212, 175, 55, 0.05),
-    inset 0 0 20px rgba(212, 175, 55, 0.02);
+    0 8px 25px rgba(15, 45, 82, 0.08),
+    0 0 15px rgba(201, 162, 39, 0.05);
 }
 
-/* ===== Navigation Gold Effect ===== */
+/* ===== Navigation ===== */
 
 nav a {
-  color: #D4AF37;
-  text-shadow:
-    0 0 4px rgba(212, 175, 55, 0.25);
+  color: #0F2D52;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
-  color: #FFD700;
-  text-shadow:
-    0 0 8px rgba(255, 215, 0, 0.6),
-    0 0 16px rgba(255, 215, 0, 0.35);
+  color: #C9A227;
+}
+
+/* ===== Buttons ===== */
+
+.btn-primary {
+  background: #0F2D52;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #1B4375;
+}
+
+.btn-gold {
+  background: #C9A227;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: #A8861E;
 }
 
 /* ===== Headings ===== */
 
 h1,
 h2,
-h3 {
-  text-shadow:
-    0 0 8px rgba(212, 175, 55, 0.15);
+h3,
+h4,
+h5,
+h6 {
+  color: #0F2D52;
+}
+
+/* ===== Scrollbar ===== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F6F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A227;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A8861E;
+}
+
+/* ===== Selection ===== */
+
+::selection {
+  background: #C9A227;
+  color: white;
+}
+
+/* ===== Animations ===== */
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* ===== Mobile ===== */
 
 @media (max-width: 768px) {
   html {
-    zoom: 0.70;
+    zoom: 0.85;
   }
 }
