@@ -2,24 +2,53 @@
 
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  CookingPot,
+  ChefHat,
+  UtensilsCrossed,
+  Home,
+  Package,
+  Gift,
+  ChevronRight,
+  ChevronLeft,
+} from "lucide-react";
 
 interface BrandsSectionProps {
   selectedBrand: string | null;
   onSelectBrand: (brand: string | null) => void;
 }
 
-const brands = [
-  { id: "1", name: "DIOR", slug: "dior" },
-  { id: "2", name: "MAC", slug: "mac" },
-  { id: "3", name: "HUDA BEAUTY", slug: "huda-beauty" },
-  { id: "4", name: "CeraVe", slug: "cerave" },
-  { id: "5", name: "ESTÉE LAUDER", slug: "estee-lauder" },
-  { id: "6", name: "L'ORÉAL", slug: "loreal" },
-  { id: "7", name: "MAYBELLINE", slug: "maybelline" },
-  { id: "8", name: "The Ordinary", slug: "the-ordinary" },
-  { id: "9", name: "YSL", slug: "ysl" },
-  { id: "10", name: "CHANEL", slug: "chanel" },
+const categories = [
+  {
+    id: "cookware",
+    name: "أطقم الحلل",
+    icon: CookingPot,
+  },
+  {
+    id: "kitchen",
+    name: "أدوات المطبخ",
+    icon: ChefHat,
+  },
+  {
+    id: "dining",
+    name: "أطقم السفرة",
+    icon: UtensilsCrossed,
+  },
+  {
+    id: "appliances",
+    name: "الأجهزة المنزلية",
+    icon: Home,
+  },
+  {
+    id: "storage",
+    name: "التخزين والتنظيم",
+    icon: Package,
+  },
+  {
+    id: "brides",
+    name: "تجهيز العرائس",
+    icon: Gift,
+  },
 ];
 
 export function BrandsSection({
@@ -38,44 +67,35 @@ export function BrandsSection({
   };
 
   return (
-    <section className="py-16 bg-black border-b border-gold/10">
+    <section className="py-16 bg-cream border-b border-gold/10">
       <div className="container-luxury">
 
-        {/* Header */}
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-20 bg-gradient-to-r from-transparent to-[#D4AF37]" />
-            <span className="text-[#D4AF37] text-2xl">♛</span>
-            <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#D4AF37]" />
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#D4AF37] mb-3 drop-shadow-[0_0_20px_rgba(212,175,55,0.45)]">
-            البراندات العالمية
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary mb-3">
+            أقسام أم النور
           </h2>
 
-          <p className="text-[#D4AF37]/80 text-lg">
-            أكثر من 100 براند عالمي أصلي
+          <p className="text-gray-600 text-lg">
+            كل ما تحتاجه لمنزلك في مكان واحد
           </p>
         </div>
 
-        {/* Navigation */}
         <div className="flex justify-center gap-3 mb-8">
           <button
             onClick={() => scroll("right")}
-            className="w-10 h-10 rounded-full border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] hover:border-[#D4AF37] hover:shadow-[0_0_15px_rgba(212,175,55,0.25)] transition-all"
+            className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all"
           >
             <ChevronRight size={18} />
           </button>
 
           <button
             onClick={() => scroll("left")}
-            className="w-10 h-10 rounded-full border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] hover:border-[#D4AF37] hover:shadow-[0_0_15px_rgba(212,175,55,0.25)] transition-all"
+            className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all"
           >
             <ChevronLeft size={18} />
           </button>
         </div>
 
-        {/* Brands Slider */}
         <div
           ref={scrollRef}
           className="flex gap-5 overflow-x-auto pb-4"
@@ -84,9 +104,9 @@ export function BrandsSection({
             msOverflowStyle: "none",
           }}
         >
-          {brands.map((brand, index) => (
+          {categories.map((category, index) => (
             <motion.div
-              key={brand.id}
+              key={category.id}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -96,60 +116,63 @@ export function BrandsSection({
               <div
                 onClick={() =>
                   onSelectBrand(
-                    selectedBrand === brand.slug
+                    selectedBrand === category.id
                       ? null
-                      : brand.slug
+                      : category.id
                   )
                 }
                 className="cursor-pointer"
               >
                 <div
                   className={`
-                    w-[150px]
-                    h-[150px]
+                    w-[170px]
+                    h-[170px]
                     rounded-3xl
                     flex
+                    flex-col
                     items-center
                     justify-center
-                    p-5
+                    gap-4
                     transition-all
                     duration-500
 
                     ${
-                      selectedBrand === brand.slug
+                      selectedBrand === category.id
                         ? `
-                          bg-gradient-to-b
-                          from-[#2a2110]
-                          to-[#0B0B0B]
+                          bg-primary
                           border
-                          border-[#D4AF37]
-                          shadow-[0_0_35px_rgba(212,175,55,0.45)]
+                          border-gold
+                          shadow-lg
                           scale-105
                         `
                         : `
-                          bg-gradient-to-b
-                          from-[#181818]
-                          to-[#0B0B0B]
+                          bg-white
                           border
-                          border-[#D4AF37]/20
-                          hover:border-[#D4AF37]
+                          border-gold/20
+                          hover:border-gold
                           hover:-translate-y-2
-                          hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]
+                          hover:shadow-xl
                         `
                     }
                   `}
                 >
+                  <category.icon
+                    size={42}
+                    className={
+                      selectedBrand === category.id
+                        ? "text-gold"
+                        : "text-primary"
+                    }
+                  />
+
                   <span
-                    className="
-                      text-[#D4AF37]
-                      font-bold
-                      text-lg
-                      tracking-wide
-                      text-center
-                      drop-shadow-[0_0_8px_rgba(212,175,55,0.35)]
-                    "
+                    className={`font-bold text-center ${
+                      selectedBrand === category.id
+                        ? "text-white"
+                        : "text-primary"
+                    }`}
                   >
-                    {brand.name}
+                    {category.name}
                   </span>
                 </div>
               </div>
