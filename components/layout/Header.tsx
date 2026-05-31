@@ -124,7 +124,7 @@ className="hidden lg:flex items-center justify-center"
       width={700}
       height={220}
       priority
-      className="object-contain w-auto h-[80px]"
+      className="object-contain w-auto h-[100px]"
     />
   </div>
 </Link>
