@@ -56,7 +56,7 @@ export function Header() {
   return (
     <>
      <header
-  className="fixed top-0 right-0 left-0 z-50 bg-black/95 backdrop-blur-xl border-b border-gold/10 shadow-2xl"
+  className="fixed top-0 right-0 left-0 z-50 bg-primary/95 backdrop-blur-xl border-b border-gold/10 shadow-2xl"
 >
         {/* Top Bar */}
         <div className="border-b border-gold/10">
@@ -120,7 +120,7 @@ export function Header() {
   <div className="relative w-[340px] h-[70px] overflow-visible flex items-center justify-center">
     <Image
       src="/images/logo1.png"
-      alt="Pharma One Cosmetics"
+      alt="أم النور للأدوات المنزلية"
       width={700}
       height={220}
       priority
@@ -142,7 +142,7 @@ export function Header() {
                   placeholder="ابحث عن منتج، براند، أو كلمة مفتاحية..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-black-light border border-gold/20 rounded-full py-3 px-5 pr-12 text-sm text-cream placeholder:text-gold-muted/50 focus:outline-none focus:border-gold/50 focus:shadow-gold-sm transition-all"
+                  className="w-full bg-white border border-gold/30 rounded-full py-3 px-5 pr-12 text-sm text-cream placeholder:text-gold-muted/50 focus:outline-none focus:border-gold/50 focus:shadow-gold-sm transition-all"
                 />
                 <Search
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-gold-muted"
@@ -264,7 +264,7 @@ export function Header() {
 
 
         {/* Navigation - Desktop */}
-        <nav className="hidden lg:block border-t border-gold/10 bg-black/80 backdrop-blur-md">
+        <nav className="hidden lg:block border-t border-gold/10 bg-primary backdrop-blur-md">
           <div className="container-luxury">
             <ul className="flex items-center justify-center gap-3 py-4">
               {navLinks.map((link) => (
@@ -319,14 +319,14 @@ hover:shadow-[0_0_20px_rgba(212,175,55,0.08)]
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="lg:hidden absolute top-full right-0 left-0 bg-black-light border-b border-gold/20 p-4"
+              className="lg:hidden absolute top-full right-0 left-0 bg-white border-b border-gold/20 p-4"
             >
               <div className="relative">
                 <input
                   type="text"
                   placeholder="ابحث عن منتج..."
                   autoFocus
-                  className="w-full bg-[#111] border border-gold/20 rounded-full py-4 px-6 pr-14 text-base text-cream placeholder:text-gold-muted/50 focus:outline-none focus:border-gold/50 focus:shadow-2xl transition-all"
+                  className="w-full bg-[#111] border border-gold/20 rounded-full py-4 px-6 pr-14 text-base text-primary placeholder:text-gold-muted/50 focus:outline-none focus:border-gold/50 focus:shadow-2xl transition-all"
                 />
                 <Search
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-gold-muted"
@@ -354,7 +354,7 @@ hover:shadow-[0_0_20px_rgba(212,175,55,0.08)]
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[300px] bg-black-light z-50 lg:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-[300px] bg-primary z-50 lg:hidden overflow-y-auto"
             >
               <div className="p-6">
                 <div className="flex items-center justify-between mb-8">
@@ -376,7 +376,7 @@ hover:shadow-[0_0_20px_rgba(212,175,55,0.08)]
                   </div>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 text-gold-light hover:text-gold"
+                    className="p-2 text-white hover:text-gold"
                   >
                     <X size={24} />
                   </button>
