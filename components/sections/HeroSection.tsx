@@ -13,7 +13,7 @@ const slides = [
     subtitle: "كل احتياجات منزلك في مكان واحد",
     description:
       "أطقم حلل - أدوات مطبخ - أطقم سفرة - أجهزة منزلية - تجهيز العرائس بأفضل الأسعار",
-    image: "/images/banners/home-banner-1.webp",
+    image: "/images/banners/panar2.webp",
     cta: {
       primary: "تصفح المنتجات",
       secondary: "العروض",
@@ -30,7 +30,7 @@ const slides = [
     subtitle: "أفضل الخامات وأفضل الأسعار",
     description:
       "كل ما تحتاجه العروسة من أدوات منزلية وأدوات مطبخ وأطقم سفرة في مكان واحد",
-    image: "/images/banners/home-banner-2.webp",
+    image: "/images/banners/panar1.webp",
     cta: {
       primary: "شاهد المنتجات",
       secondary: "تواصل معنا",
