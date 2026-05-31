@@ -20,13 +20,13 @@ export function ProductsSection({
   subtitle,
   products,
   viewAllLink,
-  badge,
 }: ProductsSectionProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const amount = 270;
+      const amount = 280;
+
       scrollRef.current.scrollBy({
         left: direction === "left" ? -amount : amount,
         behavior: "smooth",
@@ -35,40 +35,49 @@ export function ProductsSection({
   };
 
   return (
-    <section className="py-10 bg-[#0a0a0a]">
+    <section className="py-14 bg-cream">
       <div className="container-luxury">
-        {/* Section Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex items-center justify-between mb-5"
+          className="flex items-center justify-between mb-8"
         >
           <div>
-            <h2 className="text-xl md:text-2xl font-bold text-cream">{title}</h2>
-            <p className="text-xs text-gold-muted mt-0.5">{subtitle}</p>
+            <h2 className="text-3xl font-bold text-primary">
+              {title}
+            </h2>
+
+            <p className="text-gray-600 mt-2">
+              {subtitle}
+            </p>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1">
+
+          <div className="flex items-center gap-4">
+            {/* Arrows */}
+            <div className="flex items-center gap-2">
               <button
                 onClick={() => scroll("right")}
-                className="w-7 h-7 rounded-full border border-gold/15 flex items-center justify-center text-gold/60 hover:border-gold/40 hover:text-gold transition-all"
+                className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all"
               >
-                <ChevronRight size={14} />
+                <ChevronRight size={18} />
               </button>
+
               <button
                 onClick={() => scroll("left")}
-                className="w-7 h-7 rounded-full border border-gold/15 flex items-center justify-center text-gold/60 hover:border-gold/40 hover:text-gold transition-all"
+                className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all"
               >
-                <ChevronLeft size={14} />
+                <ChevronLeft size={18} />
               </button>
             </div>
+
             <Link
               href={viewAllLink}
-              className="hidden sm:flex items-center gap-1 text-xs text-gold hover:text-gold-light transition-colors"
+              className="hidden sm:flex items-center gap-2 text-primary hover:text-gold transition-colors font-semibold"
             >
-              <span>الكل</span>
-              <ArrowLeft size={14} />
+              <span>عرض الكل</span>
+              <ArrowLeft size={18} />
             </Link>
           </div>
         </motion.div>
@@ -76,17 +85,20 @@ export function ProductsSection({
         {/* Products Slider */}
         <div
           ref={scrollRef}
-          className="flex gap-3 overflow-x-auto pb-2"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex gap-5 overflow-x-auto pb-3"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
         >
           {products.map((product, index) => (
             <motion.div
               key={product._id}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.04 }}
-              className="shrink-0 w-[240px]"
+              transition={{ delay: index * 0.05 }}
+              className="shrink-0 w-[260px]"
             >
               <ProductCard product={product} />
             </motion.div>
