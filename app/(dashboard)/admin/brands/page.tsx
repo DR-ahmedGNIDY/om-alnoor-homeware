@@ -2,233 +2,344 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Plus, Search, Edit2, Trash2, Image as ImageIcon, Check } from "lucide-react";
+import {
+  Plus,
+  Search,
+  Edit2,
+  Trash2,
+  Image as ImageIcon,
+  Check,
+} from "lucide-react";
 import toast from "react-hot-toast";
 
-interface BrandForm {
+interface CategoryForm {
   name: string;
   slug: string;
   description: string;
-  categories: string[];
+  groups: string[];
 }
 
-const availableCategories = [
-  "المكياج",
-  "العناية بالبشرة",
-  "العطور",
-  "العناية بالشعر",
-  "العناية بالجسم",
-  "الأدوات والإكسسوارات",
+const availableGroups = [
+  "المطبخ",
+  "التقديم",
+  "الأجهزة المنزلية",
+  "التخزين والتنظيم",
+  "تجهيز العرائس",
+  "العروض الخاصة",
 ];
 
-export default function AdminBrands() {
+export default function AdminCategories() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [formData, setFormData] = useState<BrandForm>({
+
+  const [formData, setFormData] = useState<CategoryForm>({
     name: "",
     slug: "",
     description: "",
-    categories: [],
+    groups: [],
   });
 
-  const toggleCategory = (category: string) => {
+  const toggleGroup = (group: string) => {
     setFormData((prev) => ({
       ...prev,
-      categories: prev.categories.includes(category)
-        ? prev.categories.filter((c) => c !== category)
-        : [...prev.categories, category],
+      groups: prev.groups.includes(group)
+        ? prev.groups.filter((g) => g !== group)
+        : [...prev.groups, group],
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (formData.categories.length === 0) {
-      toast.error("اختري فئة واحدة على الأقل");
+    if (formData.groups.length === 0) {
+      toast.error("اختر مجموعة واحدة على الأقل");
       return;
     }
 
-    toast.success(`تم إضافة براند ${formData.name} بنجاح!`);
+    toast.success(`تم إضافة القسم ${formData.name} بنجاح`);
     setIsModalOpen(false);
-    setFormData({ name: "", slug: "", description: "", categories: [] });
+
+    setFormData({
+      name: "",
+      slug: "",
+      description: "",
+      groups: [],
+    });
   };
 
-  const brands = [
-    { name: "DIOR", categories: ["المكياج", "العطور", "العناية بالبشرة"], products: 450, isActive: true },
-    { name: "MAC", categories: ["المكياج"], products: 320, isActive: true },
-    { name: "HUDA BEAUTY", categories: ["المكياج"], products: 180, isActive: true },
-    { name: "CeraVe", categories: ["العناية بالبشرة"], products: 95, isActive: true },
-    { name: "The Ordinary", categories: ["العناية بالبشرة"], products: 67, isActive: true },
-    { name: "YSL", categories: ["المكياج", "العطور"], products: 210, isActive: true },
+  const categories = [
+    {
+      name: "أطقم الحلل",
+      groups: ["المطبخ"],
+      products: 120,
+      isActive: true,
+    },
+    {
+      name: "أدوات المطبخ",
+      groups: ["المطبخ"],
+      products: 180,
+      isActive: true,
+    },
+    {
+      name: "أطقم السفرة",
+      groups: ["التقديم"],
+      products: 95,
+      isActive: true,
+    },
+    {
+      name: "الأجهزة المنزلية",
+      groups: ["الأجهزة المنزلية"],
+      products: 75,
+      isActive: true,
+    },
+    {
+      name: "التخزين والتنظيم",
+      groups: ["التخزين والتنظيم"],
+      products: 60,
+      isActive: true,
+    },
+    {
+      name: "تجهيز العرائس",
+      groups: ["العروض الخاصة"],
+      products: 150,
+      isActive: true,
+    },
   ];
+
+  const filteredCategories = categories.filter((category) =>
+    category.name.includes(searchQuery)
+  );
 
   return (
     <div className="space-y-8">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-cream mb-1">البراندات</h1>
-          <p className="text-gold-muted">إدارة براندات المتجر</p>
+          <h1 className="text-3xl font-bold text-primary mb-1">
+            الأقسام الرئيسية
+          </h1>
+
+          <p className="text-gray-500">
+            إدارة أقسام متجر أم النور
+          </p>
         </div>
+
         <button
           onClick={() => setIsModalOpen(true)}
           className="btn-gold flex items-center gap-2"
         >
           <Plus size={18} />
-          <span>إضافة براند</span>
+          <span>إضافة قسم</span>
         </button>
       </div>
 
       {/* Search */}
-      <div className="luxury-card p-4">
+      <div className="bg-white rounded-2xl shadow-sm p-5 border border-gray-100">
         <div className="relative">
-          <Search className="absolute right-4 top-1/2 -translate-y-1/2 text-gold-muted" size={18} />
+          <Search
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
+            size={18}
+          />
+
           <input
             type="text"
-            placeholder="البحث في البراندات..."
+            placeholder="البحث في الأقسام..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-black border border-gold/20 rounded-xl py-3 pr-12 pl-4 text-cream placeholder:text-gold-muted/50 focus:outline-none focus:border-gold/50"
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 pr-12 pl-4 text-primary focus:outline-none focus:border-gold"
           />
         </div>
       </div>
 
-      {/* Brands Grid */}
+      {/* Categories */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {brands.map((brand, index) => (
+        {filteredCategories.map((category, index) => (
           <motion.div
-            key={brand.name}
-            initial={{ opacity: 0, y: 20 }}
+            key={category.name}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="luxury-card p-6"
+            transition={{ delay: index * 0.05 }}
+            className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
           >
             <div className="flex items-start justify-between mb-4">
-              <div className="w-16 h-16 rounded-xl bg-gold/10 flex items-center justify-center">
-                <span className="text-gold font-bold text-lg">{brand.name[0]}</span>
+              <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center">
+                <span className="text-gold text-xl font-bold">
+                  {category.name[0]}
+                </span>
               </div>
+
               <div className="flex items-center gap-2">
-                <button className="p-2 rounded-lg bg-gold/10 text-gold hover:bg-gold hover:text-black transition-all">
+                <button className="p-2 rounded-lg bg-gold/10 text-gold hover:bg-gold hover:text-white transition-all">
                   <Edit2 size={14} />
                 </button>
-                <button className="p-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500 hover:text-white transition-all">
+
+                <button className="p-2 rounded-lg bg-red-100 text-red-500 hover:bg-red-500 hover:text-white transition-all">
                   <Trash2 size={14} />
                 </button>
               </div>
             </div>
 
-            <h3 className="text-lg font-bold text-cream mb-2">{brand.name}</h3>
+            <h3 className="text-lg font-bold text-primary mb-3">
+              {category.name}
+            </h3>
 
             <div className="flex flex-wrap gap-2 mb-4">
-              {brand.categories.map((cat) => (
-                <span key={cat} className="text-xs bg-gold/10 text-gold px-2 py-1 rounded-full">
-                  {cat}
+              {category.groups.map((group) => (
+                <span
+                  key={group}
+                  className="text-xs bg-gold/10 text-gold px-3 py-1 rounded-full"
+                >
+                  {group}
                 </span>
               ))}
             </div>
 
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-gold-muted">{brand.products} منتج</span>
-              <span className={`px-2 py-1 rounded-full text-xs ${
-                brand.isActive
-                  ? "bg-green-500/20 text-green-400"
-                  : "bg-red-500/20 text-red-400"
-              }`}>
-                {brand.isActive ? "نشط" : "معطل"}
+            <div className="flex items-center justify-between">
+              <span className="text-gray-500 text-sm">
+                {category.products} منتج
+              </span>
+
+              <span className="px-3 py-1 rounded-full text-xs bg-green-100 text-green-600">
+                نشط
               </span>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Add Brand Modal */}
+      {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-black-light border border-gold/20 rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto"
           >
-            <div className="p-6 border-b border-gold/10 flex items-center justify-between">
-              <h2 className="text-xl font-bold text-cream">إضافة براند جديد</h2>
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="p-2 text-gold-muted hover:text-gold"
-              >
-                ✕
-              </button>
+            <div className="p-6 border-b">
+              <h2 className="text-xl font-bold text-primary">
+                إضافة قسم جديد
+              </h2>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-6 space-y-5">
+            <form
+              onSubmit={handleSubmit}
+              className="p-6 space-y-5"
+            >
               <div>
-                <label className="block text-sm text-gold-light mb-2">اسم البراند</label>
+                <label className="block mb-2 text-sm font-medium">
+                  اسم القسم
+                </label>
+
                 <input
                   type="text"
                   required
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value, slug: e.target.value.toLowerCase().replace(/\s+/g, "-") })}
-                  className="w-full bg-black border border-gold/20 rounded-xl py-3 px-4 text-cream focus:outline-none focus:border-gold/50"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      name: e.target.value,
+                      slug: e.target.value
+                        .toLowerCase()
+                        .replace(/\s+/g, "-"),
+                    })
+                  }
+                  className="w-full border rounded-xl px-4 py-3"
                 />
               </div>
 
               <div>
-                <label className="block text-sm text-gold-light mb-2">الرابط (Slug)</label>
+                <label className="block mb-2 text-sm font-medium">
+                  الرابط (Slug)
+                </label>
+
                 <input
                   type="text"
                   required
                   value={formData.slug}
-                  onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
-                  className="w-full bg-black border border-gold/20 rounded-xl py-3 px-4 text-cream focus:outline-none focus:border-gold/50"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      slug: e.target.value,
+                    })
+                  }
+                  className="w-full border rounded-xl px-4 py-3"
                 />
               </div>
 
               <div>
-                <label className="block text-sm text-gold-light mb-2">الوصف</label>
+                <label className="block mb-2 text-sm font-medium">
+                  وصف القسم
+                </label>
+
                 <textarea
                   rows={3}
                   value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className="w-full bg-black border border-gold/20 rounded-xl py-3 px-4 text-cream focus:outline-none focus:border-gold/50 resize-none"
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      description: e.target.value,
+                    })
+                  }
+                  className="w-full border rounded-xl px-4 py-3 resize-none"
                 />
               </div>
 
               <div>
-                <label className="block text-sm text-gold-light mb-2">الفئات المتاحة</label>
+                <label className="block mb-2 text-sm font-medium">
+                  المجموعات
+                </label>
+
                 <div className="grid grid-cols-2 gap-2">
-                  {availableCategories.map((category) => (
+                  {availableGroups.map((group) => (
                     <button
-                      key={category}
+                      key={group}
                       type="button"
-                      onClick={() => toggleCategory(category)}
-                      className={`flex items-center gap-2 p-3 rounded-xl border transition-all ${
-                        formData.categories.includes(category)
+                      onClick={() => toggleGroup(group)}
+                      className={`p-3 rounded-xl border flex items-center gap-2 ${
+                        formData.groups.includes(group)
                           ? "border-gold bg-gold/10 text-gold"
-                          : "border-gold/20 text-gold-muted hover:border-gold/40"
+                          : "border-gray-200"
                       }`}
                     >
-                      {formData.categories.includes(category) && <Check size={14} />}
-                      <span className="text-sm">{category}</span>
+                      {formData.groups.includes(group) && (
+                        <Check size={14} />
+                      )}
+
+                      <span>{group}</span>
                     </button>
                   ))}
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm text-gold-light mb-2">اللوجو</label>
-                <div className="border-2 border-dashed border-gold/20 rounded-xl p-8 text-center hover:border-gold/40 transition-colors cursor-pointer">
-                  <ImageIcon className="mx-auto text-gold-muted mb-2" size={32} />
-                  <p className="text-sm text-gold-muted">ارفعي لوجو البراند</p>
+                <label className="block mb-2 text-sm font-medium">
+                  صورة القسم
+                </label>
+
+                <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center cursor-pointer hover:border-gold transition-all">
+                  <ImageIcon
+                    className="mx-auto text-gray-400 mb-3"
+                    size={32}
+                  />
+
+                  <p className="text-gray-500">
+                    ارفع صورة القسم
+                  </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 pt-4">
-                <button type="submit" className="flex-1 btn-gold py-3">
-                  حفظ البراند
+              <div className="flex gap-3 pt-3">
+                <button
+                  type="submit"
+                  className="flex-1 btn-gold py-3"
+                >
+                  حفظ القسم
                 </button>
+
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="flex-1 py-3 rounded-xl border border-gold/20 text-gold hover:bg-gold/5 transition-colors"
+                  className="flex-1 border rounded-xl py-3"
                 >
                   إلغاء
                 </button>
